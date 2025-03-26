@@ -10,11 +10,56 @@
 	<link href="assets/styles.css" rel="stylesheet">
 	<style>
 		/* Schrijf hier gewoon je CSS voor dit component */
-
 		/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+		/* Hint: Kijk eens naar field-sizing https://developer.mozilla.org/en-US/docs/Web/CSS/field-sizing */
 
-		/* Hint: Kijk eens naar field-sizing
-			   https://developer.mozilla.org/en-US/docs/Web/CSS/field-sizing */
+		form {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			height: 10rem;
+			width: 46.5rem;
+			max-width: 90vw;
+			place-items: center;
+		}
+
+		select {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+			position: relative;
+			z-index: 1;
+			field-sizing: content;
+			width: min-content;
+			appearance: none;
+			padding: 1em;
+			font-weight: bold;
+			border-radius: 5px;
+			font-size: 1rem;
+			border: 0;
+		}
+
+		input[type="color"] {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+			height: 100%;
+			width: 100%;
+			appearance: none;
+			border: 0;
+			outline: 0;
+			padding: 0;
+			margin: 0;
+			background-color: transparent;
+			border-radius: 10px;
+		}
+
+		input[type="color"]::-webkit-color-swatch-wrapper {
+			padding: 0;
+			border-radius: 0;
+		}
+
+		input[type="color"]::-webkit-color-swatch {
+			border: none;
+		}
 	</style>
 </head>
 
