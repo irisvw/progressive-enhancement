@@ -8,10 +8,50 @@
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
-
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
-
 			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
+			* {
+				box-sizing: border-box;
+			}
+			
+			input[type="checkbox"] {
+				appearance: none;
+				background-color: grey;
+				width: 6em;
+				height: 3em;
+				border-radius: 100px;
+				transition: .2s all;
+
+				&::after {
+					content: "";
+					display: block;
+					height: 2.5em;
+					width: 2.5em;
+					margin: .25em;
+					border-radius: 100px;
+					background-color: white;
+					position: relative;
+					top: 0%;
+					left: 0%;
+					z-index: 1;
+					transition: .2s all;
+				}
+			}
+
+			input[type="checkbox"]:checked {
+				background-color: var(--green);
+				transition: .2s all;
+
+				&::after {
+					content: "aan";
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: white;
+					left: 50%;
+					transition: .2s all;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -19,6 +59,8 @@
 		
 		<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
 		     Wat gebeurt er in browsers die dat nog niet ondersteunen? -->
+		
+		<input type="checkbox">
 
 		<details open>
 			<summary>Demo video</summary>
